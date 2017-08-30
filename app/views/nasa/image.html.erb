@@ -1,0 +1,7 @@
+<h2> <%=  @result["copyright"] %></h2>
+
+<p>
+<% if !@result.nil? %>
+<%= link_to @result["hdurl"] , @result["hdurl"] %><br/>
+ <%= link_to @result["url"] , @result["url"] %> <br/>
+<%end%></p>

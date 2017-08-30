@@ -1,0 +1,16 @@
+<h2> Location coords</h2>
+
+
+<label> Enter address</label><br/>
+<%= form_tag(address_determine_path, method: :get) do %>
+<%= text_field_tag :address %><br/>
+<%=submit_tag "check" %>
+<%end%>
+<p>
+<% if !@result.nil? %>
+<h3> The coords <%= @result["results"][0]["address_components"][0]["long_name"]%> </h3>
+<h4> lattitude <%= @result["results"][0]["geometry"]["location"]["lat"]%></h4>
+<h4> longitude <%= @result["results"][0]["geometry"]["location"]["lng"]%></h4>
+
+
+<%end%></p>

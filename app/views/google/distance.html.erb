@@ -1,0 +1,17 @@
+<h2> Distance between locations</h2>
+
+
+<label> Enter your location</label><br/>
+<%= form_tag(google_distance_path, method: :get) do %>
+<%= text_field_tag :name1 %><br/>
+<label>Enter Destination location </label><br/>
+<%= form_tag(google_distance_path, method: :get) do %>
+<%= text_field_tag :name2 %><br/>
+
+<%=submit_tag "check" %>
+<%end%>
+<%end%>
+<p>
+<% if !@result.nil? %>
+<h3> The distance between <%= @result["origin_addresses"]%> and <%=  @result["destination_addresses"]%> is <%= @result["rows"][0]["elements"][0]["distance"]["text"] %> </h3>
+<%end%></p>
