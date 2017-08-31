@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'products/index'
+
+  get 'categories/index'
+
+    namespace :api, format: 'json' do 
+       namespace :v1 do 
+       resources :categories
+       resources :products
+       
+      end 
+    end
+
+  resources :categories
+  resources :products
   get 'nasa/image'
 
   get 'address/determine'
@@ -10,6 +24,8 @@ Rails.application.routes.draw do
   get 'weather/search'
 
   root 'weather#search'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

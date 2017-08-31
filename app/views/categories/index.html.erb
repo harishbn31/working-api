@@ -1,0 +1,14 @@
+<h2>Listing Categories</h2>
+
+
+<ol>
+<% @categories.each do |category| %>
+<li><%=category.name%> (<%=category.products.length %>)</li>
+	<ol>
+		<% category.products.each do |product| %>
+			<li><%= product.name %>, <%=product.price%>
+			<%end%>
+		</li>
+	</ol>
+<%end%>
+</ol> 
