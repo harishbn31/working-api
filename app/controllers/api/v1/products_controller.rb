@@ -1,5 +1,9 @@
 class Api::V1::ProductsController < ApplicationController
-	 def index
+	def index
+	 if params[:price]
+  		@products = params[:price] == "asc" ? Product.order('price') : Product.order('price DESC')
+  	else
 	@products = Product.all
+end
     end
 end

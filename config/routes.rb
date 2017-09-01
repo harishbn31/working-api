@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'google_map/index'
+
   get 'products/index'
 
   get 'categories/index'
