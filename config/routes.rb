@@ -7,10 +7,14 @@ Rails.application.routes.draw do
 
     namespace :api, format: 'json' do 
        namespace :v1 do 
-       resources :categories
-       resources :products
+         resources :categories
+         resources :products
        
       end 
+      namespace :v2 do
+        resources :tasks
+        
+      end
     end
 
   resources :categories

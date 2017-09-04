@@ -13,5 +13,5 @@
 <%end%>
 <p>
 <% if !@result.nil? %>
-<h3> The distance between <%= @result["origin_addresses"]%> and <%=  @result["destination_addresses"]%> is <%= @result["rows"][0]["elements"][0]["distance"]["text"] %> </h3>
+<h3> The location <%= @result["origin_addresses"]%> and <%=  @result["destination_addresses"]%> is <%= @result["rows"][0]["elements"][0]["distance"]["text"] %> </h3>
 <%end%></p>
